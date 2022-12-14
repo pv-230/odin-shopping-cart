@@ -39,6 +39,9 @@ module.exports = (env) => {
   } else {
     config.mode = 'development';
     config.devtool = 'eval';
+    config.devServer = {
+      historyApiFallback: true,
+    };
   }
 
   return config;

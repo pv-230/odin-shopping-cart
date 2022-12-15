@@ -1,17 +1,16 @@
 import { Outlet } from 'react-router-dom';
-import 'normalize.css';
-import './root.css';
+import './layout.css';
 
 // Components
 import Navbar from '../../components/navbar/navbar';
 
-function Root() {
+function Layout() {
   return (
-    <div className="root">
+    <div className="layout">
       <Navbar />
       <Outlet />
     </div>
   );
 }
 
-export default Root;
+export default Layout;

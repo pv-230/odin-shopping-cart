@@ -1,4 +1,3 @@
-import React from 'react';
 import './shop.css';
 
 function Shop() {

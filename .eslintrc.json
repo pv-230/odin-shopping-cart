@@ -12,7 +12,7 @@
   "plugins": ["react"],
   "rules": {
     "no-console": "off",
-    "import/extensions": [2, "never", { "jsx": "always" }],
+    "react/react-in-jsx-scope": "off",
     "jsx-a11y/label-has-associated-control": [1, { "assert": "either" }]
   }
 }

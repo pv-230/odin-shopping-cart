@@ -1,18 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import 'normalize.css';
-import './app.css';
+import './layout.css';
 
 // Components
-import Navbar from '../navbar/navbar.jsx';
+import Navbar from '../../components/navbar/navbar.jsx';
 
-function App() {
+function Layout() {
   return (
-    <div className="app">
+    <div className="layout">
       <Navbar />
       <Outlet />
     </div>
   );
 }
 
-export default App;
+export default Layout;

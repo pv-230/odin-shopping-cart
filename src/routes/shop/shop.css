@@ -1,6 +1,19 @@
 .shop {
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  padding: 20px;
+}
+
+.shop__products {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+  align-content: flex-start;
+}
+
+@media screen and (max-width: 900px) {
+  .shop__products {
+    grid-template-columns: repeat(2, auto);
+  }
 }

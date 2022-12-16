@@ -15,3 +15,11 @@ body,
   flex: 1;
   display: flex;
 }
+
+:root {
+  --light-font-color: #eee;
+  --dark-font-color: #111;
+  --light-bg-color: #eee;
+  --dark-bg-color: #111;
+  --light-hover-color: #333;
+}

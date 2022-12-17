@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './navbar.css';
 import cartUrl from './cart.svg';
 
-function Navbar() {
+function Navbar({ cartQuantity }) {
   return (
     <nav className="navbar">
       <ul>
@@ -31,9 +32,14 @@ function Navbar() {
       </ul>
       <div className="navbar__cart-icon">
         <img className="navbar__cart-svg" src={cartUrl} alt="Shopping cart" />
+        {cartQuantity > 0 ? <div className="navbar__cart-quantity">{cartQuantity}</div> : null}
       </div>
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  cartQuantity: PropTypes.number.isRequired,
+};
 
 export default Navbar;

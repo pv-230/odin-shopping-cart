@@ -13,6 +13,7 @@
   "rules": {
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
-    "jsx-a11y/label-has-associated-control": [1, { "assert": "either" }]
+    "jsx-a11y/label-has-associated-control": [1, { "assert": "either" }],
+    "react/jsx-no-bind": "off"
   }
 }

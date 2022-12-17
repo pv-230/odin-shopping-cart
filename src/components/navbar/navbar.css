@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -42,4 +43,18 @@
 
 .navbar__cart-svg {
   width: 60%;
+}
+
+.navbar__cart-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 48px;
+  width: 3ch;
+  height: 3ch;
+  color: var(--light-font-color);
+  background-color: darkred;
+  border-radius: 50%;
+  font-weight: bold;
 }

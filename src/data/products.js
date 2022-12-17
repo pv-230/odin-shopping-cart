@@ -2,32 +2,32 @@ const products = [
   {
     id: 1,
     name: 'Pumpkin',
-    price: Number(10).toFixed(2),
+    price: '10.00',
   },
   {
     id: 2,
     name: 'Strawberries',
-    price: Number(5).toFixed(2),
+    price: '5.00',
   },
   {
     id: 3,
     name: 'Lemon',
-    price: Number(0.75).toFixed(2),
+    price: '0.75',
   },
   {
     id: 4,
     name: 'Cherries',
-    price: Number(4.25).toFixed(2),
+    price: '4.25',
   },
   {
     id: 5,
     name: 'Orange',
-    price: Number(1.25).toFixed(2),
+    price: '1.25',
   },
   {
     id: 6,
     name: 'Apple',
-    price: Number(1.5).toFixed(2),
+    price: '1.5',
   },
 ];
 

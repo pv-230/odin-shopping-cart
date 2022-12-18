@@ -7,7 +7,7 @@ function Product({ id, name, price, addToCart }) {
       <img className="product__image" src="" alt={name} />
       <div className="product__info">
         <div className="product__name">{name}</div>
-        <div className="product__price">${Number(price).toFixed(2)}</div>
+        <div className="product__price">${price.toFixed(2)}</div>
       </div>
       <button className="product__add-btn" type="button" onClick={() => addToCart(id)}>
         Add to cart
@@ -17,7 +17,7 @@ function Product({ id, name, price, addToCart }) {
 }
 
 Product.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   addToCart: PropTypes.func.isRequired,

@@ -6,7 +6,7 @@ import './app.css';
 import Navbar from '../navbar/navbar';
 
 function App() {
-  const [cart, setCart] = useState(new Map());
+  const [cartItems, setCartItems] = useState(new Map());
   const [cartQuantity, setCartQuantity] = useState(0);
 
   /**
@@ -14,16 +14,16 @@ function App() {
    * @param {number} id Product ID
    */
   function addToCart(id) {
-    let productToAdd = products.find((product) => product.id === id);
-    const prevQuantity = cart.get(id)?.quantity;
+    let productToAdd = products.get(id);
+    const prevQuantity = cartItems.get(id)?.quantity;
 
     productToAdd = {
       ...productToAdd,
       quantity: prevQuantity ? prevQuantity + 1 : 1,
-      totalPrice: Number(productToAdd.price) * (prevQuantity ? prevQuantity + 1 : 1),
+      totalPrice: productToAdd.price * (prevQuantity ? prevQuantity + 1 : 1),
     };
 
-    setCart(new Map(cart.set(id, productToAdd)));
+    setCartItems(new Map(cartItems.set(id, productToAdd)));
     setCartQuantity(cartQuantity + 1);
   }
 

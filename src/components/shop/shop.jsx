@@ -9,10 +9,10 @@ function Shop() {
   return (
     <div className="shop">
       <div className="shop__products">
-        {products.map((product) => (
+        {Array.from(products, ([productKey, product]) => (
           <Product
-            key={product.id}
-            id={product.id}
+            key={productKey}
+            id={productKey}
             name={product.name}
             price={product.price}
             addToCart={addToCart}

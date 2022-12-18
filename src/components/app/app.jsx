@@ -4,6 +4,7 @@ import products from '../../data/products';
 import 'normalize.css';
 import './app.css';
 import Navbar from '../navbar/navbar';
+import Cart from '../cart/cart';
 
 function App() {
   const [cartItems, setCartItems] = useState(new Map());
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="app">
       <Navbar cartQuantity={cartQuantity} />
+      <Cart cartItems={cartItems} />
       <Outlet context={{ addToCart }} />
     </div>
   );

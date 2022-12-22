@@ -65,7 +65,7 @@ function App() {
     };
 
     setCartItems(new Map(cartItems.set(id, productToUpdate)));
-    setCartQuantity(cartQuantity - oldQuantity + productToUpdate.quantity);
+    setCartQuantity(cartQuantity - oldQuantity + newQuantity);
   }
 
   /**

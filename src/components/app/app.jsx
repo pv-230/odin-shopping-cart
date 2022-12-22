@@ -12,7 +12,7 @@ function App() {
 
   /**
    * Adds a product to the shopping cart.
-   * @param {number} id Product ID
+   * @param {string} id Product ID
    */
   function addToCart(id) {
     let productToAdd = products.get(id);
@@ -35,7 +35,7 @@ function App() {
 
   /**
    * Removes a produce from the shopping cart.
-   * @param {number} id Product ID
+   * @param {string} id Product ID
    */
   function removeFromCart(id) {
     if (cartItems.has(id)) {
@@ -47,10 +47,38 @@ function App() {
     }
   }
 
+  /**
+   * Updates the quantity of a specific item in the cart.
+   * @param {string} id Product ID
+   * @param {number} newQuantity
+   */
+  function updateItemQuantity(id, newQuantity) {
+    let productToUpdate = cartItems.get(id);
+
+    if (productToUpdate !== 'undefined') {
+      const oldQuantity = productToUpdate.quantity;
+
+      productToUpdate = {
+        ...productToUpdate,
+        quantity: newQuantity,
+        totalPrice: productToUpdate.price * newQuantity,
+      };
+
+      setCartItems(new Map(cartItems.set(id, productToUpdate)));
+      setCartQuantity(cartQuantity - oldQuantity + productToUpdate.quantity);
+    } else {
+      throw new Error('Unable to update cart item (ID not found)');
+    }
+  }
+
   return (
     <div className="app">
       <Navbar cartQuantity={cartQuantity} />
-      <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+      <Cart
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+        updateItemQuantity={updateItemQuantity}
+      />
       <Outlet context={{ addToCart }} />
     </div>
   );

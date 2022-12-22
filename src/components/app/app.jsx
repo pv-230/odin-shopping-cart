@@ -9,6 +9,7 @@ import Cart from '../cart/cart';
 function App() {
   const [cartItems, setCartItems] = useState(new Map());
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [cartVisible, setCartVisible] = useState(false);
 
   /**
    * Adds a product to the shopping cart.
@@ -16,13 +17,11 @@ function App() {
    */
   function addToCart(id) {
     let productToAdd = products.get(id);
-
     if (productToAdd === 'undefined') {
       throw new Error('Unable to add cart item (ID not found)');
     }
 
     const prevQuantity = cartItems.get(id)?.quantity;
-
     productToAdd = {
       ...productToAdd,
       quantity: prevQuantity ? prevQuantity + 1 : 1,
@@ -38,13 +37,13 @@ function App() {
    * @param {string} id Product ID
    */
   function removeFromCart(id) {
-    if (cartItems.has(id)) {
-      setCartQuantity(cartQuantity - cartItems.get(id).quantity);
-      cartItems.delete(id);
-      setCartItems(new Map(cartItems));
-    } else {
+    if (!cartItems.has(id)) {
       throw new Error('Unable to remove cart item (ID not found)');
     }
+
+    setCartQuantity(cartQuantity - cartItems.get(id).quantity);
+    cartItems.delete(id);
+    setCartItems(new Map(cartItems));
   }
 
   /**
@@ -54,27 +53,33 @@ function App() {
    */
   function updateItemQuantity(id, newQuantity) {
     let productToUpdate = cartItems.get(id);
-
-    if (productToUpdate !== 'undefined') {
-      const oldQuantity = productToUpdate.quantity;
-
-      productToUpdate = {
-        ...productToUpdate,
-        quantity: newQuantity,
-        totalPrice: productToUpdate.price * newQuantity,
-      };
-
-      setCartItems(new Map(cartItems.set(id, productToUpdate)));
-      setCartQuantity(cartQuantity - oldQuantity + productToUpdate.quantity);
-    } else {
+    if (productToUpdate === 'undefined') {
       throw new Error('Unable to update cart item (ID not found)');
     }
+
+    const oldQuantity = productToUpdate.quantity;
+    productToUpdate = {
+      ...productToUpdate,
+      quantity: newQuantity,
+      totalPrice: productToUpdate.price * newQuantity,
+    };
+
+    setCartItems(new Map(cartItems.set(id, productToUpdate)));
+    setCartQuantity(cartQuantity - oldQuantity + productToUpdate.quantity);
+  }
+
+  /**
+   * Toggles visibility of the cart.
+   */
+  function toggleCart() {
+    setCartVisible(!cartVisible);
   }
 
   return (
     <div className="app">
-      <Navbar cartQuantity={cartQuantity} />
+      <Navbar cartQuantity={cartQuantity} toggleCart={toggleCart} />
       <Cart
+        cartVisible={cartVisible}
         cartItems={cartItems}
         removeFromCart={removeFromCart}
         updateItemQuantity={updateItemQuantity}

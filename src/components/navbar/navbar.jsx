@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './navbar.css';
 import cartUrl from './cart.svg';
 
-function Navbar({ cartQuantity }) {
+function Navbar({ cartQuantity, toggleCart }) {
   return (
     <nav className="navbar">
       <ul>
@@ -30,16 +30,17 @@ function Navbar({ cartQuantity }) {
           </NavLink>
         </li>
       </ul>
-      <div className="navbar__cart-icon">
+      <button className="navbar__cart-icon" type="button" onClick={toggleCart}>
         <img className="navbar__cart-svg" src={cartUrl} alt="Shopping cart" />
         {cartQuantity > 0 ? <div className="navbar__cart-quantity">{cartQuantity}</div> : null}
-      </div>
+      </button>
     </nav>
   );
 }
 
 Navbar.propTypes = {
   cartQuantity: PropTypes.number.isRequired,
+  toggleCart: PropTypes.func.isRequired,
 };
 
 export default Navbar;

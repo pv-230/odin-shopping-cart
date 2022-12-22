@@ -33,7 +33,9 @@
   position: relative;
   width: 64px;
   height: 64px;
+  border: none;
   border-radius: 50%;
+  background-color: var(--dark-bg-color);
 }
 
 .navbar__cart-icon:hover {

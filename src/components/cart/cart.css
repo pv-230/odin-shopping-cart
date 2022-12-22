@@ -1,7 +1,7 @@
 .cart {
   position: absolute;
-  top: 60px;
-  right: 35px;
+  top: 68px;
+  right: 20px;
   background-color: var(--light-bg-color);
   border: 1px solid var(--dark-bg-color);
   width: 300px;
@@ -30,4 +30,12 @@
 
 .cart__item-quantity {
   width: 65px;
+}
+
+.cart__total-price {
+  padding: 10px;
+}
+
+.cart_hidden {
+  display: none;
 }

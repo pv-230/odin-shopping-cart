@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import './cart.css';
 
-function Cart({ cartItems, removeFromCart, updateItemQuantity }) {
+function Cart({ cartVisible, cartItems, removeFromCart, updateItemQuantity }) {
   // Sums the price of all items in cart
   const cartItemsArray = Array.from(cartItems);
   const cartTotalPrice = cartItemsArray.reduce((prev, curr) => prev + curr[1].totalPrice, 0);
 
   return (
-    <div className="cart">
+    <div className={cartVisible ? 'cart' : 'cart_hidden'}>
       <ul className="cart__items">
         {cartItemsArray.map(([productKey, product]) => (
           <li className="cart__item" key={productKey}>
@@ -44,6 +44,7 @@ function Cart({ cartItems, removeFromCart, updateItemQuantity }) {
 }
 
 Cart.propTypes = {
+  cartVisible: PropTypes.bool.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   cartItems: PropTypes.object.isRequired,
   removeFromCart: PropTypes.func.isRequired,

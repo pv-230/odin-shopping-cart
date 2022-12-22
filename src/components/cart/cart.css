@@ -4,6 +4,8 @@
   right: 35px;
   background-color: var(--light-bg-color);
   border: 1px solid var(--dark-bg-color);
+  width: 300px;
+  max-width: 300px;
 }
 
 .cart__items {
@@ -17,10 +19,13 @@
   flex-direction: column;
   padding: 10px;
   gap: 5px;
+  border-bottom: 1px solid var(--dark-bg-color);
 }
 
-.cart__item:not(.cart__items:first-child) {
-  border-top: 1px solid var(--dark-bg-color);
+.cart__item-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cart__item-quantity {

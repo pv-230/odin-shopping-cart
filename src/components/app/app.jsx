@@ -16,6 +16,11 @@ function App() {
    */
   function addToCart(id) {
     let productToAdd = products.get(id);
+
+    if (productToAdd === 'undefined') {
+      throw new Error('Unable to add cart item (ID not found)');
+    }
+
     const prevQuantity = cartItems.get(id)?.quantity;
 
     productToAdd = {
@@ -28,10 +33,24 @@ function App() {
     setCartQuantity(cartQuantity + 1);
   }
 
+  /**
+   * Removes a produce from the shopping cart.
+   * @param {number} id Product ID
+   */
+  function removeFromCart(id) {
+    if (cartItems.has(id)) {
+      setCartQuantity(cartQuantity - cartItems.get(id).quantity);
+      cartItems.delete(id);
+      setCartItems(new Map(cartItems));
+    } else {
+      throw new Error('Unable to remove cart item (ID not found)');
+    }
+  }
+
   return (
     <div className="app">
       <Navbar cartQuantity={cartQuantity} />
-      <Cart cartItems={cartItems} />
+      <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
       <Outlet context={{ addToCart }} />
     </div>
   );

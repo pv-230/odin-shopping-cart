@@ -33,6 +33,12 @@ function Cart({ cartVisible, cartItems, removeFromCart, updateItemQuantity }) {
                   const newQuantity = Math.abs(Math.floor(Number(e.target.value)));
                   updateItemQuantity(productKey, newQuantity);
                 }}
+                onBlur={() => {
+                  if (cartItems.get(productKey).quantity === 0) {
+                    // Removes any cart item that had an invalid quantity set by user input
+                    removeFromCart(productKey);
+                  }
+                }}
               />
             </div>
           </li>

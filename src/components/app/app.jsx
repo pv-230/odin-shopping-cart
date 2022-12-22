@@ -76,7 +76,21 @@ function App() {
   }
 
   return (
-    <div className="app">
+    // eslint-disable-next-line
+    <div
+      className="app"
+      onClick={(e) => {
+        if (
+          !e.target.offsetParent.classList.contains('cart') &&
+          !e.target.offsetParent.classList.contains('navbar__cart-icon') &&
+          !e.target.classList.contains('navbar__cart-icon') &&
+          !e.target.classList.contains('product__add-btn')
+        ) {
+          // Hides the cart when the user clicks on something not cart related
+          setCartVisible(false);
+        }
+      }}
+    >
       <Navbar cartQuantity={cartQuantity} toggleCart={toggleCart} />
       <Cart
         cartVisible={cartVisible}

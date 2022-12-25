@@ -7,4 +7,7 @@ products.set(crypto.randomUUID(), { name: 'Cherries', price: 4.25 });
 products.set(crypto.randomUUID(), { name: 'Orange', price: 1.25 });
 products.set(crypto.randomUUID(), { name: 'Apple', price: 1.5 });
 
-export default products;
+// Used when rendering each product inside a component with Array.prototype.map()
+const productsArr = Array.from(products);
+
+export { products as default, productsArr };

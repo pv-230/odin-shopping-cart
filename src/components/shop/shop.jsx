@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 import './shop.css';
 import Product from '../product/product';
-import products from '../../data/products';
+import { productsArr } from '../../data/products';
 
 function Shop() {
   const { addToCart } = useOutletContext();
@@ -9,7 +9,7 @@ function Shop() {
   return (
     <div className="shop">
       <div className="shop__products">
-        {Array.from(products, ([productKey, product]) => (
+        {productsArr.map(([productKey, product]) => (
           <Product
             key={productKey}
             id={productKey}

@@ -1,5 +1,4 @@
 import { screen, render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import Shop from './shop';
 import { productsArr } from '../../data/products';
 import { useOutletContext } from 'react-router-dom';

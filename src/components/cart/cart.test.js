@@ -23,12 +23,11 @@ const cartItemsArrMock = [
   ],
 ];
 
-const cartItemsMock = new Map(cartItemsArrMock);
 const cartTotalPrice = cartItemsArrMock.reduce((prev, curr) => prev + curr[1].totalPrice, 0);
 
 const propMocks = {
   cartVisible: true,
-  cartItems: cartItemsMock,
+  cartItems: new Map(cartItemsArrMock),
   removeFromCart: jest.fn(),
   updateItemQuantity: jest.fn(),
 };
@@ -57,11 +56,42 @@ describe('cart component', () => {
     });
   });
 
-  it('updates new quantity with spinner', () => {
+  it('updates new quantity with number input', () => {
     render(<Cart {...propMocks} />);
     const firstInput = screen.getAllByRole('spinbutton')[0];
 
     userEvent.type(firstInput, '0');
     expect(propMocks.updateItemQuantity).toBeCalled();
+  });
+
+  it('removes cart items with zero quantity', () => {
+    const cartItemZeroQuantity = [
+      [
+        'key1',
+        {
+          name: 'zero item',
+          price: 3.5,
+          quantity: 0,
+          totalPrice: 0,
+        },
+      ],
+    ];
+
+    render(<Cart {...{ ...propMocks, cartItems: new Map(cartItemZeroQuantity) }} />);
+    const numberInput = screen.getByRole('spinbutton');
+    const itemName = screen.getByText('zero item');
+
+    expect(screen.getByText('zero item')).toBeInTheDocument();
+    expect(screen.getByRole('spinbutton').getAttribute('value')).toBe('');
+    expect(screen.getByText('$0.00')).toBeInTheDocument();
+    expect(screen.getByText('Cart total: $0.00')).toBeInTheDocument();
+    userEvent.click(numberInput);
+    userEvent.click(itemName);
+    expect(propMocks.removeFromCart).toBeCalled();
+  });
+
+  it('hides cart if visiblilty is false', () => {
+    render(<Cart {...{ ...propMocks, cartVisible: false }} />);
+    expect(screen.queryByText('Cart total')).not.toBeInTheDocument();
   });
 });

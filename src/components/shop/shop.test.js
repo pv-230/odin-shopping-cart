@@ -3,7 +3,7 @@ import Shop from './shop';
 import { productsArr } from '../../data/products';
 import { useOutletContext } from 'react-router-dom';
 
-jest.mock('react-router-dom');
+jest.mock('react-router-dom', () => ({ useOutletContext: jest.fn() }));
 
 describe('shop component', () => {
   it('displays all products', () => {

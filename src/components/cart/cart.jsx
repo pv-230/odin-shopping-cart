@@ -23,23 +23,25 @@ function Cart({ cartVisible, cartItems, removeFromCart, updateItemQuantity }) {
             </div>
             <div className="cart__item-price">${product.totalPrice.toFixed(2)}</div>
             <div className="cart__item-quantity-wrapper">
-              <span>Qty: </span>
-              <input
-                className="cart__item-quantity"
-                type="number"
-                min="1"
-                value={product.quantity || ''}
-                onChange={(e) => {
-                  const newQuantity = Math.abs(Math.floor(Number(e.target.value)));
-                  updateItemQuantity(productKey, newQuantity);
-                }}
-                onBlur={() => {
-                  if (cartItems.get(productKey).quantity === 0) {
-                    // Removes any cart item that had an invalid quantity set by user input
-                    removeFromCart(productKey);
-                  }
-                }}
-              />
+              <label>
+                <span>Qty: </span>
+                <input
+                  className="cart__item-quantity"
+                  type="number"
+                  min="1"
+                  value={product.quantity || ''}
+                  onChange={(e) => {
+                    const newQuantity = Math.abs(Math.floor(Number(e.target.value)));
+                    updateItemQuantity(productKey, newQuantity);
+                  }}
+                  onBlur={() => {
+                    if (cartItems.get(productKey).quantity === 0) {
+                      // Removes any cart item that had an invalid quantity set by user input
+                      removeFromCart(productKey);
+                    }
+                  }}
+                />
+              </label>
             </div>
           </li>
         ))}

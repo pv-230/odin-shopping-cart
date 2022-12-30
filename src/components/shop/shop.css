@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   padding: 20px;
+  background-color: var(--light-bg-color);
 }
 
 .shop__products {
@@ -12,8 +13,14 @@
   align-content: flex-start;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1300px) {
   .shop__products {
     grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .shop__products {
+    grid-template-columns: auto;
   }
 }

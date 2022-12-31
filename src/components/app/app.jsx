@@ -85,7 +85,9 @@ function App() {
           !e.target.offsetParent.classList.contains('cart') &&
           !e.target.offsetParent.classList.contains('navbar__cart-icon') &&
           !e.target.classList.contains('navbar__cart-icon') &&
-          !e.target.classList.contains('product__add-btn')
+          !e.target.classList.contains('product__add-btn') &&
+          !e.target.classList.contains('product__btn-text_normal') &&
+          !e.target.classList.contains('product__btn-text_added')
         ) {
           // Hides the cart when the user clicks on something not cart related
           setCartVisible(false);

@@ -4,6 +4,19 @@ import './navbar.css';
 import cartUrl from './cart.svg';
 
 function Navbar({ cartQuantity, toggleCart }) {
+  /**
+   * Helper function for rendering cart quantities.
+   */
+  const quantityDisplay = () => {
+    if (cartQuantity > 99) {
+      return <span className="navbar__cart-quantity">...</span>;
+    } else if (cartQuantity > 0) {
+      return <span className="navbar__cart-quantity">{cartQuantity}</span>;
+    }
+
+    return null;
+  };
+
   return (
     <nav className="navbar">
       <ul>
@@ -32,7 +45,7 @@ function Navbar({ cartQuantity, toggleCart }) {
       </ul>
       <button className="navbar__cart-icon" type="button" onClick={toggleCart}>
         <img className="navbar__cart-svg" src={cartUrl} alt="Shopping cart" />
-        {cartQuantity > 0 ? <div className="navbar__cart-quantity">{cartQuantity}</div> : null}
+        {quantityDisplay()}
       </button>
     </nav>
   );

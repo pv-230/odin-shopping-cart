@@ -44,7 +44,7 @@ describe('cart component', () => {
       expect(screen.getByDisplayValue(cartItemsArrMock[i][1].quantity)).toBeInTheDocument();
     });
     expect(screen.getAllByRole('button').length).toBe(cartItemsArrMock.length);
-    expect(screen.getByText(`Cart total: $${cartTotalPrice.toFixed(2)}`)).toBeInTheDocument();
+    expect(screen.getByText(`$${cartTotalPrice.toFixed(2)}`)).toBeInTheDocument();
   });
 
   it('calls removeFromCart when remove button is clicked', () => {
@@ -83,8 +83,7 @@ describe('cart component', () => {
 
     expect(screen.getByText('zero item')).toBeInTheDocument();
     expect(screen.getByRole('spinbutton').getAttribute('value')).toBe('');
-    expect(screen.getByText('$0.00')).toBeInTheDocument();
-    expect(screen.getByText('Cart total: $0.00')).toBeInTheDocument();
+    expect(screen.getByTestId('cart-total').textContent).toBe('$0.00');
     userEvent.click(numberInput);
     userEvent.click(itemName);
     expect(propMocks.removeFromCart).toBeCalled();

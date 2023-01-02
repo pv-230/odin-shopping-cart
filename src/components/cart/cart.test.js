@@ -83,7 +83,7 @@ describe('cart component', () => {
 
     expect(screen.getByText('zero item')).toBeInTheDocument();
     expect(screen.getByRole('spinbutton').getAttribute('value')).toBe('');
-    expect(screen.getByTestId('cart-total').textContent).toBe('$0.00');
+    expect(screen.getByText('Cart is empty')).toBeInTheDocument();
     userEvent.click(numberInput);
     userEvent.click(itemName);
     expect(propMocks.removeFromCart).toBeCalled();

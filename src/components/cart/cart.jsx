@@ -49,12 +49,16 @@ function Cart({ cartVisible, cartItems, removeFromCart, updateItemQuantity }) {
             </li>
           ))}
         </ul>
-        <div className="cart__total-price">
-          <span>Cart total:</span>
-          <div className="cart__total-price-value" data-testid="cart-total">
-            ${cartTotalPrice.toFixed(2)}
+        {cartTotalPrice > 0 ? (
+          <div className="cart__total-price">
+            <span>Cart total:</span>
+            <div className="cart__total-price-value" data-testid="cart-total">
+              ${cartTotalPrice.toFixed(2)}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="cart__empty-text">Cart is empty</div>
+        )}
       </div>
     </div>
   );

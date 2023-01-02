@@ -87,3 +87,10 @@
   border: none;
   border-radius: 50%;
 }
+
+.cart__empty-text {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+}

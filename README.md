@@ -15,8 +15,8 @@ https://www.theodinproject.com/lessons/node-path-javascript-shopping-cart
 
 ## Screenshots
 
-![First screenshot](/screenshots/screen1.png?raw=true)
+![First screenshot](/screenshots/screen1.webp?raw=true)
 
-![Second screenshot](/screenshots/screen2.png?raw=true)
+![Second screenshot](/screenshots/screen2.webp?raw=true)
 
-![Third screenshot](/screenshots/screen3.png?raw=true)
+![Third screenshot](/screenshots/screen3.webp?raw=true)

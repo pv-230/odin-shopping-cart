@@ -2,5 +2,81 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  padding: 20px;
+  background-color: var(--light-bg-color);
+}
+
+.welcome-box {
+  display: flex;
+  justify-content: space-between;
+  width: 1300px;
+  height: 434px;
+  background-color: var(--dark-green-color);
+  color: var(--light-font-color);
+  border-radius: 5px;
+}
+
+.welcome-box__left {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 50%;
+  padding: 20px;
+}
+
+.welcome-box__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: bold;
+}
+
+.welcome-box__header {
+  font-size: 3rem;
+}
+
+.welcome-box__image {
+  width: 50%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-image: url('./market.webp');
+}
+
+.welcome-box__shop-btn:hover {
+  text-decoration: underline;
+}
+
+.welcome-box__shop-btn {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--dark-green-color);
+  background-color: var(--light-font-color);
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1340px) {
+  .welcome-box {
+    flex-direction: column;
+    width: 650px;
+    height: 868px;
+  }
+
+  .welcome-box__left {
+    width: 100%;
+    height: 50%;
+  }
+
+  .welcome-box__image {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .welcome-box {
+    width: 100%;
+  }
 }

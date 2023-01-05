@@ -6,6 +6,7 @@ const testProps = {
   id: 'randomkey',
   name: 'test product',
   price: 3.5,
+  imageUrl: '',
   addToCart: jest.fn(),
 };
 

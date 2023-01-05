@@ -43,7 +43,6 @@ describe('cart component', () => {
       ).toBeInTheDocument();
       expect(screen.getByDisplayValue(cartItemsArrMock[i][1].quantity)).toBeInTheDocument();
     });
-    expect(screen.getAllByRole('button').length).toBe(cartItemsArrMock.length);
     expect(screen.getByText(`$${cartTotalPrice.toFixed(2)}`)).toBeInTheDocument();
   });
 
@@ -64,7 +63,7 @@ describe('cart component', () => {
     expect(propMocks.updateItemQuantity).toBeCalled();
   });
 
-  it('removes cart items with zero quantity', () => {
+  it('resets cart items with zero quantity to one', () => {
     const cartItemZeroQuantity = [
       [
         'key1',
@@ -83,10 +82,9 @@ describe('cart component', () => {
 
     expect(screen.getByText('zero item')).toBeInTheDocument();
     expect(screen.getByRole('spinbutton').getAttribute('value')).toBe('');
-    expect(screen.getByText('Cart is empty')).toBeInTheDocument();
     userEvent.click(numberInput);
     userEvent.click(itemName);
-    expect(propMocks.removeFromCart).toBeCalled();
+    expect(propMocks.updateItemQuantity).toBeCalled();
   });
 
   it('hides cart if visiblilty is false', () => {

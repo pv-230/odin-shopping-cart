@@ -3,9 +3,9 @@
   --dark-font-color: #111;
   --light-bg-color: #eee;
   --dark-bg-color: #111;
-  --light-hover-color: #333;
+  --dark-gray-color: #333;
   --dark-green-color: #145b01;
-  --dark-green-hover: #1b7d00;
+  --light-green-color: #1b7d00;
 }
 
 *,

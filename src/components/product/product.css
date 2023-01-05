@@ -34,7 +34,7 @@
 }
 
 .product__add-btn:hover {
-  background-color: var(--dark-green-hover);
+  background-color: var(--light-green-color);
 }
 
 .product__add-btn,

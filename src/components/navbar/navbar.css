@@ -9,6 +9,7 @@
   padding: 0 20px;
   background-color: var(--dark-green-color);
   user-select: none;
+  box-shadow: 0 0 10px var(--dark-gray-color);
 }
 
 .navbar ul {
@@ -41,7 +42,7 @@
 }
 
 .navbar__cart-icon:hover {
-  background-color: var(--dark-green-hover);
+  background-color: var(--light-green-color);
   cursor: pointer;
 }
 

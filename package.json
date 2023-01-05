@@ -1,5 +1,5 @@
 {
-  "homepage": "https://pv-320.github.io/odin-shopping-cart/",
+  "homepage": "https://pv-320.github.io/odin-shopping-cart/#",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

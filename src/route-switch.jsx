@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import App from './components/app/app';
 import Home from './components/home/home';
@@ -7,7 +7,7 @@ import NoMatch from './components/no-match/no-match';
 
 function RouteSwitch() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
@@ -15,7 +15,7 @@ function RouteSwitch() {
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -11,6 +11,10 @@
   box-shadow: 0 0 10px #c1c1c1;
 }
 
+.product__image {
+  width: 75%;
+}
+
 .product__info {
   display: flex;
   flex-direction: column;

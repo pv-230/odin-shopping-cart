@@ -39,8 +39,8 @@ function Cart({ cartVisible, cartItems, removeFromCart, updateItemQuantity }) {
                     }}
                     onBlur={() => {
                       if (cartItems.get(productKey).quantity === 0) {
-                        // Removes any cart item that had an invalid quantity set by user input
-                        removeFromCart(productKey);
+                        // Resets any cart item that had an invalid quantity set by user input
+                        updateItemQuantity(productKey, 1);
                       }
                     }}
                   />

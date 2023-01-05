@@ -16,6 +16,7 @@ function Shop() {
             name={product.name}
             price={product.price}
             addToCart={addToCart}
+            imageUrl={product.imageUrl}
           />
         ))}
       </div>

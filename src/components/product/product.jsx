@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './product.css';
 
-function Product({ id, name, price, addToCart }) {
+function Product({ id, name, price, addToCart, imageUrl }) {
   const [isAdded, setIsAdded] = useState(false);
 
   /**
@@ -17,7 +17,7 @@ function Product({ id, name, price, addToCart }) {
 
   return (
     <div className="product">
-      <img className="product__image" src="" alt={name} />
+      <img className="product__image" src={imageUrl} alt={name} />
       <div className="product__info">
         <div className="product__name">{name}</div>
         <div className="product__price">${price.toFixed(2)}</div>
@@ -45,6 +45,7 @@ Product.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   addToCart: PropTypes.func.isRequired,
+  imageUrl: PropTypes.string.isRequired,
 };
 
 export default Product;

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b7b358b.css",
-    "main.js": "/static/js/main.6efca3e6.js",
-    "static/media/market.webp": "/static/media/market.b155614042c7f6c928eb.webp",
-    "static/media/strawberry.webp": "/static/media/strawberry.8661de43d74592fed031.webp",
-    "static/media/pumpkin.webp": "/static/media/pumpkin.a9bf01cacff6b7398d4c.webp",
-    "static/media/lemon.webp": "/static/media/lemon.57df818ab8a972559cb2.webp",
-    "static/media/grapes.webp": "/static/media/grapes.c0987c5eea68717adb1f.webp",
-    "static/media/apple.webp": "/static/media/apple.bb2af5dd31647b81589b.webp",
-    "static/media/cherries.webp": "/static/media/cherries.8d87f4d849ca85bd4312.webp",
-    "static/media/cart.svg": "/static/media/cart.86331b7d243a187b15cd9aa08d9402b4.svg",
-    "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.ce55ce3d5350e0adfca72673162ba53b.svg",
-    "main.3b7b358b.css.map": "/static/css/main.3b7b358b.css.map",
-    "main.6efca3e6.js.map": "/static/js/main.6efca3e6.js.map"
+    "main.css": "/odin-shopping-cart/static/css/main.d60e80ab.css",
+    "main.js": "/odin-shopping-cart/static/js/main.ade88652.js",
+    "static/media/market.webp": "/odin-shopping-cart/static/media/market.b155614042c7f6c928eb.webp",
+    "static/media/strawberry.webp": "/odin-shopping-cart/static/media/strawberry.8661de43d74592fed031.webp",
+    "static/media/pumpkin.webp": "/odin-shopping-cart/static/media/pumpkin.a9bf01cacff6b7398d4c.webp",
+    "static/media/lemon.webp": "/odin-shopping-cart/static/media/lemon.57df818ab8a972559cb2.webp",
+    "static/media/grapes.webp": "/odin-shopping-cart/static/media/grapes.c0987c5eea68717adb1f.webp",
+    "static/media/apple.webp": "/odin-shopping-cart/static/media/apple.bb2af5dd31647b81589b.webp",
+    "static/media/cherries.webp": "/odin-shopping-cart/static/media/cherries.8d87f4d849ca85bd4312.webp",
+    "static/media/cart.svg": "/odin-shopping-cart/static/media/cart.86331b7d243a187b15cd9aa08d9402b4.svg",
+    "index.html": "/odin-shopping-cart/index.html",
+    "static/media/close.svg": "/odin-shopping-cart/static/media/close.ce55ce3d5350e0adfca72673162ba53b.svg",
+    "main.d60e80ab.css.map": "/odin-shopping-cart/static/css/main.d60e80ab.css.map",
+    "main.ade88652.js.map": "/odin-shopping-cart/static/js/main.ade88652.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b7b358b.css",
-    "static/js/main.6efca3e6.js"
+    "static/css/main.d60e80ab.css",
+    "static/js/main.ade88652.js"
   ]
 }
